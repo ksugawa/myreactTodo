@@ -17,11 +17,11 @@ function App() {
     <>
       <h1>ToDo List</h1>
       <TodoInput setTodos={setTodos} />
+      <div className="todo-rest">残りのタスク: {todos.filter((todo) => !todo.completed).length}</div>
       <div className="todo-list">
         <TodoList todos={todos} toggleTodo={toggleTodo} />
       </div>
 
-      <div>残りのタスク: {todos.filter((todo) => !todo.completed).length}</div>
     </>
   );
 }

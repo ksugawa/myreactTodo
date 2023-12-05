@@ -17,16 +17,18 @@ const TodoInput = ({ todoinput, setTodos}) => {
     };
 
     return (
-        <>
+        <div className="todoinput-line">
         <input 
             type="text" 
             ref={todoNameRef} 
             placeholder="新しいTodoを追加" 
         />
         <button 
-            onClick={handleAddTodo}>＋</button>
+            onClick={handleAddTodo}
+            className="todo-addBtn"
+        >＋</button>
         
-        </>
+        </div>
 
     );
 };
