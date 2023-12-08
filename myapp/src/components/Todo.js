@@ -18,9 +18,19 @@ const Todo = ({ todo, toggleTodo, onDelete }) => {
         onChange={handleTodoClick}
       />
       <label className="todo-checkbox">{todo.name}</label>
-      <button 
-        onClick={handleClear}
-        className="icon-delete">×</button>
+      <div>
+        <button 
+          className="icon-edit"
+          >
+          <img src="/assets/images/icon-edit.svg" alt="edit-icon" />
+        </button>
+        <button 
+          onClick={handleClear} 
+          className="icon-delete"
+        >
+          <img src="/assets/images/icon-delete.svg" alt="delete-icon" />
+        </button>
+      </div>
     </div>
   );
 };

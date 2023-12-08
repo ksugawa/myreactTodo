@@ -57,12 +57,15 @@ input[type="text"] {
 
 }
 
+.todo,
 .todo-addBtn {
-  border: 1px solid #e1e0e0;
   border: 1px solid #e1e0e0;
 }
 
 .todo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin: 8px 0;
   position: relative;
   border-radius: 12px;
@@ -106,4 +109,13 @@ input[type="checkbox"] {
   background: #fff;
   width: 49px;
   height: 49px;
+}
+
+.todo-rest {
+  text-align: right;
+}
+
+.icon-edit,
+.icon-delete {
+  padding: 0 4px;
 }
