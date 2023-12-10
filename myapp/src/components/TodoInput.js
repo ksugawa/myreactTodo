@@ -21,16 +21,9 @@ const TodoInput = ({ todoinput, setTodos}) => {
     <>
     <form onSubmit={handleSubmit}>
         <div className="todoinput-line">
-        <input 
-            type="text" 
-            ref={todoNameRef} 
-            placeholder="新しいTodoを追加" 
-        />
-        <button 
-            onClick={handleAddTodo}
-            className="todo-addBtn"
-        >＋</button>
-        
+        <button className="todo-addBtn">
+        <img src="/assets/images/icon-add.svg" alt="add-icon"/>
+        </button>
         </div>
     </form>
     </>
