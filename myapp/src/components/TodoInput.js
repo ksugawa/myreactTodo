@@ -1,6 +1,7 @@
 import React, { useRef } from "react";
 import { v4 as uuidv4 } from "uuid";
 
+export const TodoInput = ({ todos, setTodos }) => {
 
 const TodoInput = ({ todoinput, setTodos}) => {
     

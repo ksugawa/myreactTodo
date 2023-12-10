@@ -1,9 +1,9 @@
 import React from "react";
 import Todo from "./Todo";
 
-const TodoList = ({ todos, toggleTodo, onDelete }) => {
+const TodoList = ({ todos, setTodos, onDelete }) => {
   return todos.map((todo) => (
-  <Todo key={todo.id} todo={todo} toggleTodo={toggleTodo} onDelete={onDelete}/>
+  <Todo key={todo.id} todo={todo} setTodos={setTodos} onDelete={onDelete}/>
   ));
 };
 

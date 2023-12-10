@@ -16,9 +16,9 @@ function App() {
   return (
     <>
       <h1>ToDo List</h1>
-      <TodoInput setTodos={setTodos} />
+      <TodoInput todos={todos} setTodos={setTodos} />
       <div className="todo-list">
-        <TodoList todos={todos} toggleTodo={toggleTodo} />
+        <TodoList todos={todos} setTodos={setTodos} />
       </div>
       <div className="todo-rest">残りのタスク: {todos.filter((todo) => !todo.completed).length}</div>
 

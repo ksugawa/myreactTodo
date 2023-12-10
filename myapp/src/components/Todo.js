@@ -1,12 +1,12 @@
 import React from "react";
 
-const Todo = ({ todo, toggleTodo, onDelete }) => {
+export const Todo = ({ todo, todos, setTodos, onDelete }) => {
   const handleTodoClick = () => {
-    toggleTodo(todo.id);
+    setTodos(todo.id);
   };
 
-  const handleClear = () => {
-    onDelete(todo.id);
+  const handleClear = (id) => {
+    setTodos(todos.filter((todo) => todo.id !==id));
   };
 
   return (
