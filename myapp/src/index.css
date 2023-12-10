@@ -38,7 +38,7 @@ button {
   text-decoration: line-through;
   color: #db3545;
 }
-
+form,
 .todo-rest,
 .todoinput-line,
 .todo-list {
@@ -46,7 +46,9 @@ button {
 }
 
 .todoinput-line {
-  display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin: 2rem auto 5rem;
   padding: 0 1rem;
 }
