@@ -18,14 +18,14 @@ export const Todo = ({ todo, todos, setTodos, onDelete }) => {
         onChange={handleTodoClick}
       />
       <label className="todo-checkbox">{todo.name}</label>
-      <div>
+      <div className="icons">
         <button 
           className="icon-edit"
           >
           <img src="/assets/images/icon-edit.svg" alt="edit-icon" />
         </button>
         <button 
-          onClick={handleClear} 
+          onClick={() => handleClear(todo.id)} 
           className="icon-delete"
         >
           <img src="/assets/images/icon-delete.svg" alt="delete-icon" />
