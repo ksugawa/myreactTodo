@@ -18,6 +18,8 @@ const TodoInput = ({ todoinput, setTodos}) => {
     };
 
     return (
+    <>
+    <form onSubmit={handleSubmit}>
         <div className="todoinput-line">
         <input 
             type="text" 
@@ -30,7 +32,8 @@ const TodoInput = ({ todoinput, setTodos}) => {
         >＋</button>
         
         </div>
-
+    </form>
+    </>
     );
 };
 
