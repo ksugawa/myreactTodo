@@ -13,7 +13,7 @@ export const TodoInput = ({ todos, setTodos }) => {
       {
         id: uuidv4(),
         name: inputText,
-        completed: false,
+        completed: false
       },
     ]);
     setInputText("");

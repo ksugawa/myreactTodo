@@ -7,6 +7,7 @@ export const TodoList = ({ todos, toggleTodo, setTodos }) => {
       <Todo
         key={uuidv4()}
         todo={todo}
+        todos={todos}
         toggleTodo={toggleTodo}
         setTodos={setTodos}
       />
