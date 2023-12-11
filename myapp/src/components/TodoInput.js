@@ -1,15 +1,15 @@
 import React, { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 
-export const TodoInput = ({ setTodos }) => {
+export const TodoInput = ({ todos, setTodos }) => {
 
   const [inputText, setInputText] = useState("");
   
   const handleAddTodo = (e) => {
     e.preventDefault();
     if (inputText === "") return;
-    setTodos((prevTodos) => [
-      ...prevTodos,
+    setTodos([
+      ...todos,
       {
         id: uuidv4(),
         name: inputText,
