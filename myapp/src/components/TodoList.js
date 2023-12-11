@@ -1,9 +1,12 @@
 import React from "react";
 import Todo from "./Todo";
+import { v4 as uuidv4 } from "uuid";
 
-const TodoList = ({ todos, setTodos, onDelete }) => {
+
+const TodoList = ({ todos, toggleTodo, setTodos }) => {
+
   return todos.map((todo) => (
-  <Todo key={todo.id} todo={todo} setTodos={setTodos} onDelete={onDelete}/>
+    <Todo key={uuidv4()} todo={todo} toggleTodo={toggleTodo} setTodos={setTodos}/>
   ));
 };
 

@@ -1,17 +1,10 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import TodoList from "./components/TodoList.js";
 import TodoInput from "./components/TodoInput.js";
 import "./App.css";
 
 function App() {
   const [todos, setTodos] = useState([]);
-
-  const toggleTodo = (id) => {
-    const newTodos = [...todos];
-    const todo = newTodos.find((todo) => todo.id === id);
-    todo.completed = !todo.completed;
-    setTodos(newTodos);
-  };
 
   return (
     <>
