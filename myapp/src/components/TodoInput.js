@@ -16,11 +16,11 @@ export const TodoInput = ({ todos, setTodos }) => {
         completed: false,
       },
     ]);
+    setInputText("");
   };
 
   const handleChange = (e) => {
     setInputText(e.target.value);
-    console.log(inputText);
   };
 
   return (

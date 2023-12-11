@@ -17,6 +17,12 @@ body {
   align-self: center;
 }
 
+img {
+  max-width:100%;
+  height:auto;
+  vertical-align: bottom;
+}
+
 button {
   background-color: transparent;
   border: none;
@@ -34,14 +40,14 @@ button {
   flex-direction: column;
 }
 
-.completed-task {
-  text-decoration: line-through;
-  color: #db3545;
+.completed {
+  opacity: 0.5;
 }
+
 form,
 .todo-rest,
 .todoinput-line,
-.todo-list {
+.todo {
   width: 100%;
 }
 
@@ -56,7 +62,6 @@ form,
 .todo,
 input[type="text"] {
   padding: 16px 20px;
-
 }
 
 .todo,
@@ -86,24 +91,18 @@ input[type="checkbox"] {
   display: none;
 }
 
-.todo-checkbox {
-  cursor: pointer;
+.todoText {
   display: inline-block;
-  position: relative;
-  margin-left: 3rem;
+  margin-left: 1rem;
 }
 
-.todo-checkbox::before {
-  content: "";
-  position: absolute;
-  display: inline-block;
+.icon-done {
+  cursor: pointer;
   width: 32px;
   height: 32px;
   padding: 4px;
   border-radius: 999px;
   border: 2px solid #93d94e;
-  top: -2px;
-  left: -3rem;
 }
 
 .todo-addBtn {
@@ -115,6 +114,13 @@ input[type="checkbox"] {
 
 .todo-rest {
   text-align: right;
+}
+
+.icons,
+.flex  {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .icon-edit,

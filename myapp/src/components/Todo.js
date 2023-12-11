@@ -1,30 +1,37 @@
 import React from "react";
+import style from "../index.css";
 
-export const Todo = ({ todo, todos, setTodos, toggleTodo }) => {
 
-  const handleTodoClick = () => {
-    toggleTodo(todo.id);
+export const Todo = ({ todo, todos, setTodos }) => {
+  const handleCompleted = (id) => {
+    setTodos(
+      todos.map((todo) => {
+        if (id === todo.id) {
+          return {
+            ...todo,
+            completed: !todo.completed,
+          };
+        }
+        return todo;
+      })
+    );
   };
 
-  const handleClear = () => {
-    const newTodos = todos.filter((todo) => !todo.completed);
-    setTodos(newTodos);
+  const handleClear = (id) => {
+    setTodos(todos.filter((todo) => todo.id !== id));
   };
 
   return (
-    <div className="todo">
-      <input
-        type="checkbox"
-        checked={todo.completed}
-        readOnly
-        onChange={handleTodoClick}
-      />
-      <label className="todo-checkbox">{todo.name}</label>
-      <div className="icons">
+    <div className={`todo ${todo.completed ? "completed" : ""}`}>
+      <div className="flex">
+        <button onClick={() => handleCompleted(todo.id)} className="icon-done"></button>
+        <div className="todoText">{todo.name}</div>
+      </div>
+      <div className={`${style.icons} ${style.flex}`}>
         <button className="icon-edit">
           <img src="/assets/images/icon-edit.svg" alt="edit-icon" />
         </button>
-        <button onClick={handleClear} className="icon-delete">
+        <button onClick={() => handleClear(todo.id)} className="icon-delete">
           <img src="/assets/images/icon-delete.svg" alt="delete-icon" />
         </button>
       </div>
