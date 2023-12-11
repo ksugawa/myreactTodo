@@ -10,9 +10,7 @@ function App() {
     <>
       <h1>ToDo List</h1>
       <TodoInput todos={todos} setTodos={setTodos} />
-      <div className="todo-list">
-        <TodoList todos={todos} setTodos={setTodos} />
-      </div>
+      <TodoList todos={todos} setTodos={setTodos} />
       <div className="todo-rest">残りのタスク: {todos.filter((todo) => !todo.completed).length}</div>
 
     </>
