@@ -1,28 +1,33 @@
-import React, { useRef } from "react";
+import React, { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 
-export const TodoInput = ({ todos, setTodos }) => {
-  
-  const todoNameRef = useRef();
+export const TodoInput = ({ setTodos }) => {
 
+  const [inputText, setInputText] = useState("");
+  
   const handleAddTodo = (e) => {
-    const name = todoNameRef.current.value;
-    if (name === "") return;
-    setTodos((prevTodos) => {
-      return [...prevTodos, {
+    e.preventDefault();
+    if (inputText === "") return;
+    setTodos((prevTodos) => [
+      ...prevTodos,
+      {
         id: uuidv4(),
-        name: name,
-        completed: false
-      }];
-    });
-    todoNameRef.current.value = null;
+        name: inputText,
+        completed: false,
+      },
+    ]);
+  };
+
+  const handleChange = (e) => {
+    setInputText(e.target.value);
+    console.log(inputText);
   };
 
   return (
     <>
     <form onSubmit={handleAddTodo}>
       <div className="todoinput-line">
-        <input type="text" ref={todoNameRef} placeholder="新しいTodoを追加" />
+        <input type="text" onChange={handleChange} value={inputText} placeholder="新しいTodoを追加" />
         <button className="todo-addBtn">
         <img src="/assets/images/icon-add.svg" alt="add-icon"/>
         </button>
