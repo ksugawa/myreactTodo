@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import TodoList from "./components/TodoList.js";
-import TodoInput from "./components/TodoInput.js";
+import { TodoList } from "./components/TodoList.js";
+import { TodoInput } from "./components/TodoInput.js";
+import { TodoRest } from "./components/TodoRest.js";
 import "./App.css";
 
 function App() {
@@ -11,8 +12,7 @@ function App() {
       <h1>ToDo List</h1>
       <TodoInput todos={todos} setTodos={setTodos} />
       <TodoList todos={todos} setTodos={setTodos} />
-      <div className="todo-rest">残りのタスク: {todos.filter((todo) => !todo.completed).length}</div>
-
+      <TodoRest todos={todos} setTodos={setTodos} />
     </>
   );
 }
