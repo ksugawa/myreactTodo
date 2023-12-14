@@ -5,7 +5,7 @@ export const TodoInput = ({ todos, setTodos }) => {
 
   const [inputText, setInputText] = useState("");
   
-  const handleAddTodo = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     if (inputText === "") return;
     setTodos([
@@ -18,10 +18,6 @@ export const TodoInput = ({ todos, setTodos }) => {
       },
     ]);
     setInputText("");
-  };
-
-  const handleChange = (e) => {
-    setInputText(e.target.value);
   };
 
   return (
