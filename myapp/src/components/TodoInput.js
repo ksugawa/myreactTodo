@@ -13,7 +13,8 @@ export const TodoInput = ({ todos, setTodos }) => {
       {
         id: uuidv4(),
         name: inputText,
-        completed: false
+        completed: false,
+        editing: false
       },
     ]);
     setInputText("");
@@ -25,12 +26,10 @@ export const TodoInput = ({ todos, setTodos }) => {
 
   return (
     <>
-    <form onSubmit={handleAddTodo}>
+    <form onSubmit={handleSubmit}>
       <div className="todoinput-line">
-        <input type="text" onChange={handleChange} value={inputText} placeholder="新しいTodoを追加" />
-        <button className="todo-addBtn">
-        <img src="/assets/images/icon-add.svg" alt="add-icon"/>
-        </button>
+        <input type="text" onChange={(e) => setInputText(e.target.value)} value={inputText} placeholder="更新" />
+        <button className="todo-addBtn"><img src="/assets/images/icon-add.svg" alt="add-icon"/></button>
       </div>
     </form>
     </>
