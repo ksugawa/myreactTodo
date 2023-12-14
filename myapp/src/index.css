@@ -3,6 +3,8 @@
 *,
 *::before,
 *::after {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
@@ -14,7 +16,8 @@ body {
   -moz-osx-font-smoothing: grayscale;
   display: flex;
   justify-content: center;
-  align-self: center;
+  align-items: center;
+  line-height: 1.75;
 }
 
 img {
@@ -34,6 +37,7 @@ button {
 
 #root {
   width: 581px;
+  margin-top: 5rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -55,13 +59,13 @@ form,
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 2rem auto 2rem;
+  margin: 2rem auto;
   padding: 0 1rem;
 }
 
 .todo,
 input[type="text"] {
-  padding: 16px 20px;
+  padding: 0.75rem 1rem;
 }
 
 .todo,
@@ -85,6 +89,7 @@ input[type="text"] {
   border: none;
   border-radius: 12px 0 0 12px;
   border-top: 2px solid #e1e0e0;
+  line-height: 1.75;
 }
 
 input[type="checkbox"] {
