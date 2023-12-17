@@ -48,6 +48,25 @@ button {
   opacity: 0.5;
 }
 
+.completed .icon-done{
+  background: #93d94e;
+}
+
+.completed .icon-done::before{
+  position: absolute;
+  content: "";
+  display: block;
+  width: 24px;
+  height: 24px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-image: url('./assets/images/check-w.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+
+}
+
 form,
 .todo-rest,
 .todoinput-line,
@@ -68,6 +87,10 @@ input[type="text"] {
   padding: 0.75rem 1rem;
 }
 
+input {
+  border: none;
+}
+
 .todo,
 .todo-addBtn {
   border: 1px solid #e1e0e0;
@@ -77,19 +100,22 @@ input[type="text"] {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 8px 0;
+  margin: 4px 0;
   position: relative;
   border-radius: 12px;
   box-shadow: 0px 4px 25px 0px rgba(225, 224, 224, 0.25);
 }
 
-input[type="text"] {
+.todo-input,
+.todo-input-edit {
   width: calc(100% - 49px);
-  background: #e1e0e0;
-  border: none;
   border-radius: 12px 0 0 12px;
   border-top: 2px solid #e1e0e0;
   line-height: 1.75;
+}
+
+.todo-input {
+  background: #e1e0e0;
 }
 
 input[type="checkbox"] {
@@ -102,6 +128,7 @@ input[type="checkbox"] {
 }
 
 .icon-done {
+  position: relative;
   cursor: pointer;
   width: 32px;
   height: 32px;
