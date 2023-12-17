@@ -2,13 +2,13 @@ import React, { useState } from "react";
 import addBtn from "../assets/images/icon-add.svg"; 
 
 
-export const EditTodo = ({ todo, editTodo }) => {
+export const EditTodo = ({ task, editTodo }) => {
 
-  const [inputText, setInputText] = useState(todo.name);
+  const [inputText, setInputText] = useState(task.name);
   
   const handleSubmit = (e) => {
     e.preventDefault();
-    editTodo(inputText, todo.id);
+    editTodo(inputText, task.id);
   };
 
   return (

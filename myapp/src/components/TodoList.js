@@ -1,10 +1,8 @@
 import React from "react";
 import { Todo } from "./Todo";
-import { EditTodo } from "./EditTodo"
-
+import { EditTodo } from "./EditTodo";
 
 export const TodoList = ({ todos, setTodos }) => {
-
   const handleCompleted = (id) => {
     setTodos(
       todos.map((todo) =>
@@ -15,15 +13,17 @@ export const TodoList = ({ todos, setTodos }) => {
 
   const editTodo = (id) => {
     setTodos(
-      todos.map((todo) => {
-        if (id === todo.id) {
-          return {
-            ...todo,
-            editing: !todo.editing,
-          };
-        }
-        return todo;
-      })
+      todos.map((todo) =>
+        id === todo.id ? { ...todo, editing: !todo.editing } : todo
+      )
+    );
+  };
+
+  const editTask = (task, id) => {
+    setTodos(
+      todos.map((todo) =>
+        todo.id === id ? { ...todo, task, editing: !todo.editing } : todo
+      )
     );
   };
 
@@ -31,19 +31,19 @@ export const TodoList = ({ todos, setTodos }) => {
     setTodos(todos.filter((todo) => todo.id !== id));
   };
 
-  return todos.map((todo) => (
+  return todos.map((todo) =>
     todo.editing ? (
-      <EditTodo key={todo.id} editTodo={editTodo} todo={todo} />
+      <EditTodo key={todo.id} editTodo={editTask} task={todo} />
     ) : (
       <Todo
         key={todo.id}
-        todo={todo}
+        task={todo}
         editTodo={editTodo}
         deleteTodo={deleteTodo}
         handleCompleted={handleCompleted}
       />
     )
-  ));
+  );
 };
 
 export default TodoList;

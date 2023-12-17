@@ -4,22 +4,22 @@ import editIcon from "../assets/images/icon-edit.svg";
 import deleteIcon from "../assets/images/icon-delete.svg"; 
 
 
-export const Todo = ({ todo, todos, setTodos, editTodo, deleteTodo, handleCompleted }) => {
+export const Todo = ({ task, editTodo, deleteTodo, handleCompleted }) => {
 
   return (
-    <div className={`todo ${todo.completed ? "completed" : ""}`}>
+    <div className={`todo ${task.completed ? "completed" : ""}`}>
       <div className="flex">
         <button
-          onClick={() => handleCompleted(todo.id)}
+          onClick={() => handleCompleted(task.id)}
           className="icon-done"
         ></button>
-        <div className="todoText">{todo.name}</div>
+        <div className="todoText">{task.name}</div>
       </div>
       <div className={`${style.icons} ${style.flex}`}>
-        <button onClick={() => editTodo(todo.id)} className="icon-edit">
+        <button onClick={() => editTodo(task.id)} className="icon-edit">
           <img src={editIcon} alt="edit-icon" />
         </button>
-        <button onClick={() => deleteTodo(todo.id)} className="icon-delete">
+        <button onClick={() => deleteTodo(task.id)} className="icon-delete">
           <img src={deleteIcon} alt="delete-icon" />
         </button>
       </div>
