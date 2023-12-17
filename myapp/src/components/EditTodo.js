@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 export const EditTodo = ({ todo, editTodo }) => {
 
-  const [inputText, setInputText] = useState("");
+  const [inputText, setInputText] = useState(todo.name);
   
   const handleSubmit = (e) => {
     e.preventDefault();
