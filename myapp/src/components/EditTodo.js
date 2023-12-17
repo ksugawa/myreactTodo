@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import addBtn from "../assets/images/icon-add.svg"; 
+
 
 export const EditTodo = ({ todo, editTodo }) => {
 
@@ -13,8 +15,8 @@ export const EditTodo = ({ todo, editTodo }) => {
     <>
     <form onSubmit={handleSubmit}>
       <div className="todoinput-line">
-        <input type="text" onChange={(e) =>setInputText(e.target.value)} value={inputText} placeholder="新しいTodoを追加" />
-        <button className="todo-addBtn"><img src="/assets/images/icon-add.svg" alt="add-icon"/></button>
+        <input type="text" onChange={(e) =>setInputText(e.target.value)} value={inputText} className="todo-input-edit" placeholder="更新" />
+        <button className="todo-addBtn"><img src={addBtn} alt="add-icon"/></button>
       </div>
     </form>
     </>

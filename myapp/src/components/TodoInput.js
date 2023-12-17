@@ -8,7 +8,7 @@ export const TodoInput = ({ todos, setTodos }) => {
   
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (inputText === "") return;
+    if (inputText);
     setTodos([
       ...todos,
       {
@@ -25,7 +25,7 @@ export const TodoInput = ({ todos, setTodos }) => {
     <>
     <form onSubmit={handleSubmit}>
       <div className="todoinput-line">
-        <input type="text" onChange={(e) => setInputText(e.target.value)} value={inputText} placeholder="更新" />
+        <input type="text" onChange={(e) => setInputText(e.target.value)} className="todo-input" value={inputText} placeholder="新しいtodoを追加" />
         <button className="todo-addBtn"><img src={addBtn} alt="add-icon"/></button>
       </div>
     </form>
