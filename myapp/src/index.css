@@ -110,7 +110,7 @@ input {
 .todo-input-edit {
   width: calc(100% - 49px);
   border-radius: 12px 0 0 12px;
-  border-top: 2px solid #e1e0e0;
+  border: 1px solid #e1e0e0;
   line-height: 1.75;
 }
 
