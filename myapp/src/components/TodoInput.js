@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
+import addBtn from "../assets/images/icon-add.svg"; 
 
 export const TodoInput = ({ todos, setTodos }) => {
 
@@ -25,7 +26,7 @@ export const TodoInput = ({ todos, setTodos }) => {
     <form onSubmit={handleSubmit}>
       <div className="todoinput-line">
         <input type="text" onChange={(e) => setInputText(e.target.value)} value={inputText} placeholder="更新" />
-        <button className="todo-addBtn"><img src="/assets/images/icon-add.svg" alt="add-icon"/></button>
+        <button className="todo-addBtn"><img src={addBtn} alt="add-icon"/></button>
       </div>
     </form>
     </>

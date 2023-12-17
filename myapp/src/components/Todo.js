@@ -1,5 +1,8 @@
 import React from "react";
 import style from "../index.css";
+import editIcon from "../assets/images/icon-edit.svg"; 
+import deleteIcon from "../assets/images/icon-delete.svg"; 
+
 
 export const Todo = ({ todo, todos, setTodos }) => {
   const handleCompleted = (id) => {
@@ -39,10 +42,10 @@ export const Todo = ({ todo, todos, setTodos }) => {
       </div>
       <div className={`${style.icons} ${style.flex}`}>
         <button onClick={() => handleEdit(todo.id)} className="icon-edit">
-          <img src="/assets/images/icon-edit.svg" alt="edit-icon" />
+          <img src={editIcon} alt="edit-icon" />
         </button>
         <button onClick={() => handleClear(todo.id)} className="icon-delete">
-          <img src="/assets/images/icon-delete.svg" alt="delete-icon" />
+          <img src={deleteIcon} alt="delete-icon" />
         </button>
       </div>
     </div>
